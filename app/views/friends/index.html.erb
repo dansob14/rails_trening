@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Friends</h1>
+
+<div id="friends">
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phones:</th>
+      <th scope="col">Operations:</th>
+    </tr>
+  </thead>
+  
+  <% @friends.each do |friend| %>
+    <%if friend.user == current_user%>
+    <tbody>
+    <tr>
+  
+      <td><%= friend.first_name %></td>
+      <td><%= friend.last_name %></td>
+      <td><%= friend.phone %></td>
+      <td><%= link_to "Show", friend %> </td>
+       </tr>
+  </tbody>
+  <% end %>    
+  <% end %>
+  </table>
+</div>
